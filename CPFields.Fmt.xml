@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Fields>
+<Field
+       ID="{{{}}}"
+       Name="DPDBTBillTransportType{}"
+       DisplayName="Použitý dopravní prostředek {}"
+       Type="Choice"
+       Required="FALSE"
+       ShowInEditForm="TRUE"
+       ShowInNewForm="FALSE"
+       Group="DPD BusinessTrips">
+    <Default>Služební vozidlo</Default>
+    <CHOICES>
+      <CHOICE>Služební vozidlo</CHOICE>
+      <CHOICE>Soukromé vozidlo</CHOICE>
+      <CHOICE>Hromadný dopravní prostředek</CHOICE>
+      <CHOICE>Letadlo</CHOICE>
+    </CHOICES>
+  </Field>
+  <Field
+           ID="{{{}}}"
+           Name="DPDBTBillCarKmAmount{}"
+           DisplayName="Ujeté km {}"
+           Type="Number"
+           Required="FALSE"
+           ShowInEditForm="TRUE"
+           ShowInNewForm="FALSE"
+           Group="DPD BusinessTrips">
+    <Default>0.00</Default>
+  </Field>
+  <Field
+           ID="{{{}}}"
+           Name="DPDBTBillCarKmRefund{}"
+           DisplayName="Náhrada {}"
+           Type="Number"
+           Required="FALSE"
+           ShowInEditForm="TRUE"
+           ShowInNewForm="FALSE"
+           Group="DPD BusinessTrips">
+    <Default>0.00</Default>
+  </Field>
+  <Field
+           ID="{{{}}}"
+           Name="DPDBTBillCarKmFuelVolume{}"
+           DisplayName="PHM {}"
+           Type="Number"
+           Required="FALSE"
+           Group="DPD BusinessTrips">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field
+           ID="{{{}}}"
+           Name="DPDBTBillTransportAmount{}"
+           DisplayName="Jízdné {}"
+           Type="Number"
+           Required="FALSE"
+           ShowInEditForm="TRUE"
+           ShowInNewForm="FALSE"
+           Group="DPD BusinessTrips">
+    <Default>0.00</Default>
+  </Field>
+  <Field
+         ID="{{{}}}"
+         Name="DPDBTBillHotelAmount{}"
+         DisplayName="Nocležné {}"
+         Type="Number"
+         Required="FALSE"
+          ShowInEditForm="TRUE"
+          ShowInNewForm="FALSE"
+         
+         Group="DPD BusinessTrips">
+    <Default>0.00</Default>
+  </Field>
+  <Field
+         ID="{{{}}}"
+         Name="DPDBTBillFoodAmount{}"
+         DisplayName="Stravné {}"
+         Type="Number"
+         Required="FALSE"
+          ShowInEditForm="TRUE"
+          ShowInNewForm="FALSE"
+         Group="DPD BusinessTrips">
+    <Default>0.00</Default>
+  </Field>
+  <Field
+        ID="{{{}}}"
+        Name="DPDBTBillOthersAmount{}"
+        DisplayName="Ostatní vedlejší výdaje {}"
+        Type="Number"
+        Required="FALSE"
+        ShowInEditForm="TRUE"
+        ShowInNewForm="FALSE"
+        Group="DPD BusinessTrips">
+    <Default>0.00</Default>
+  </Field>
+  </Fields>

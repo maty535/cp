@@ -1,0 +1,1016 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+
+  <Field
+     ID="{ae8ad039-001e-49c2-8bf7-4600995b1e13}"
+     Name="DPDBTId"
+     DisplayName="Číslo příkazu"
+     Type="GeneratedField"
+     Required="TRUE"
+     Group="DPD BusinessTrips">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>GenRules</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">"40"+Y+NNNNNN</Value>
+        </Property>
+        <Property>
+          <Name>UniqueInFolder</Name>
+          <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">true</Value>
+        </Property>
+        <Property>
+          <Name>SaveCounter</Name>
+          <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p4:type="q3:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">true</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+
+  <Field
+      ID="{1301e01f-b120-4b5d-a0c8-5849815a9234}"
+      Name="DPDBTStartDate"
+      DisplayName="Datum zahájení cesty"
+      Type="DateTime"
+      Format="DateOnly"
+      Required="TRUE"
+      Group="DPD BusinessTrips">
+    <Default>[today]</Default>
+  </Field>
+  <Field
+      ID="{c4bb1e83-3043-4180-b7df-9c3f141b2368}"
+      Name="DPDBTEndDate"
+      DisplayName="Datum ukončení cesty"
+      Type="DateTime"
+      Format="DateOnly"
+      Required="TRUE"
+      Group="DPD BusinessTrips">
+  </Field>
+
+  <Field
+         ID="{71d06b10-d0f4-4681-b3df-307278765226}"
+         Name="DPDBTMainPerson"
+         DisplayName="Jméno"
+         Type="Text"
+         Required="FALSE"
+         Group="DPD BusinessTrips">
+  </Field>
+  <Field
+         ID="{2af8a710-0598-4ad8-95ac-059eaeeaef40}"
+         Name="DPDBTDepo"
+         DisplayName="Depo"
+         Type="Text"
+         MaxLength="20"
+         Required="FALSE"
+         Group="DPD BusinessTrips">
+  </Field>
+
+  <Field
+           ID="{519f13ff-871c-49db-9ec8-bf242c430e7f}"
+           Name="DPDBTAdvanceAmount"
+           DisplayName="Záloha"
+           Type="Number"
+           Required="TRUE"
+           Group="DPD BusinessTrips">
+		   <Default>0.00</Default>
+  </Field>
+  
+  <Field
+       ID="{0c374039-d095-4779-957e-37665e29022a}"
+       Name="DPDBTAdvanceCurrency"
+       DisplayName="Měna pro zálohu"
+       Type="Choice"
+       ShowInEditForm="TRUE"
+       ShowInNewForm="TRUE"
+       Group="DPD BusinessTrips">
+    <Default>CZK</Default>
+    <CHOICES>
+      <CHOICE>CZK</CHOICE>
+      <CHOICE>EUR</CHOICE>
+    </CHOICES>
+  </Field>
+  
+
+  <Field
+       ID="{ee97892f-93d8-4c11-90cf-dffa9c09c1d6}"
+       Name="DPDBTTransportType"
+       DisplayName="Dopravní prostředek"
+       Type="Choice"
+       Required="TRUE"
+       ShowInEditForm="TRUE"
+       ShowInNewForm="TRUE"
+       Group="DPD BusinessTrips">
+    <Default>Služební vozidlo</Default>
+    <CHOICES>
+      <CHOICE>Služební vozidlo</CHOICE>
+      <CHOICE>Soukromé vozidlo</CHOICE>
+      <CHOICE>Hromadný dopravní prostředek</CHOICE>
+      <CHOICE>Letadlo</CHOICE>
+    </CHOICES>
+  </Field>
+
+  <Field
+    ID="{336c6b0a-4bf4-404e-a519-7edf59455d07}"
+    Name="DPDBTPoolcar"
+    DisplayName="Služební vozidlo"
+    Type="CustomLookupField"
+    Group="DPD BusinessTrips">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>IndexFieldDisplayName</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">RZ a název</Value>
+        </Property>
+        <Property>
+          <Name>TransferSettings</Name>
+          <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">SPZ:DPDCarfleetPoolCarRZ#;</Value>
+        </Property>
+        <Property>
+          <Name>MaxResultCount</Name>
+          <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p4:type="q3:int" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+        </Property>
+        <Property>
+          <Name>CopyToAdvancedTable</Name>
+          <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" p4:type="q5:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+        <Property>
+          <Name>AllowSearchAll</Name>
+          <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">true</Value>
+        </Property>
+        <Property>
+          <Name>SourceListURL</Name>
+          <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" p4:type="q5:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">http://dpdportal.xp.cz/ti4sp/carfleet/Lists/DPDCarfleetPoolCars</Value>
+        </Property>
+        <Property>
+          <Name>SourceListSite</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">http://dpdportal.xp.cz/sites/ti4sp</Value>
+        </Property>
+        <Property>
+          <Name>SourceType</Name>
+          <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">SP</Value>
+        </Property>
+        <Property>
+          <Name>IsObjectProcedure</Name>
+          <Value xmlns:q11="http://www.w3.org/2001/XMLSchema" p4:type="q11:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+        <Property>
+          <Name>AllowExistingValueOnly</Name>
+          <Value xmlns:q12="http://www.w3.org/2001/XMLSchema" p4:type="q12:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">true</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+
+  <Field
+          ID="{0b330997-dac9-44d6-aec2-d0628553f9a8}"
+          Name="DPDBTPoolcarGps"
+          DisplayName="GPS ve vozidle"
+          Type="Boolean"
+          Required="FALSE"
+          Group="DPD BusinessTrips">
+    <Default>0</Default>
+  </Field>
+
+
+  <Field
+          ID="{7dde8995-ac1c-4da8-b782-a2c31f5d9dd6}"
+          Name="DPDBTCarRegistrationNumber"
+          DisplayName="SPZ"
+          Type="Text"
+          Required="FALSE"
+          Group="DPD BusinessTrips">
+  </Field>
+
+  <Field
+          ID="{f2c2b80f-3c81-40d0-9e0b-67d0a8dcdb2c}"
+          Name="DPDBTPrivateCarInsurance"
+          DisplayName="Pojištění za škodu"
+          Type="Boolean"
+          Required="FALSE"
+          Group="DPD BusinessTrips">
+    <Default>0</Default>
+  </Field>
+  <Field
+          ID="{41484a5d-c353-4500-86b1-01ec262b1e5c}"
+          Name="DPDBTPrivateCarInspectionValid"
+          DisplayName="Technická způsobilost vozidla"
+          Type="Boolean"
+          Required="FALSE"
+          Group="DPD BusinessTrips">
+    <Default>0</Default>
+  </Field>
+
+  <Field
+       ID="{77f8d209-d6a1-4d33-926f-aeecd08343c8}"
+       Name="DPDBTPrivateCarDocuments"
+       DisplayName="Doklady pro schválení soukromného vozidla"
+       Type="AttachmentField"
+       Required="FALSE"
+       Group="DPD BusinessTrips">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>DeleteAttachmentWithoutWarn</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+  
+  <Field
+         ID="{d64874af-dd2b-41b9-9643-d885947ef06e}"
+         Name="DPDBTFellowPassenger"
+         DisplayName="Spolucestující"
+         Type="Text"
+         Required="FALSE"
+         Group="DPD BusinessTrips">
+  </Field>
+  
+  <Field
+       ID="{271157be-3081-47cc-8064-1411d7fe8ab4}"
+       Name="DPDBTResidenceAddress"
+       DisplayName="Místo zahájení cesty / Bydlište"
+       Type="Text"
+       Required="FALSE"
+       Group="DPD BusinessTrips">
+  </Field>
+  
+  <Field
+       ID="{72c98b95-18ab-44f7-b7a9-62a8851cb9c5}"
+       Name="DPDBTDestination"
+       DisplayName="Místo pracovní cesty"
+       Type="Text"
+       Required="FALSE"
+       Group="DPD BusinessTrips">
+  </Field>
+  <Field
+       ID="{d3770db9-13ba-4ec1-9f36-cb3318afc0d2}"
+       Name="DPDBTPurpose"
+       DisplayName="Účel pracovní cesty"
+       Type="Text"
+       Required="TRUE"
+       Group="DPD BusinessTrips">
+  </Field>
+
+
+  <Field
+       ID="{49221873-5969-4435-aec8-ef46f8cf2835}"
+       Name="DPDBTBillType"
+       DisplayName="Způsob úhrady"
+       Type="Choice"
+       ShowInEditForm="TRUE"
+       ShowInNewForm="TRUE"
+       Group="DPD BusinessTrips">
+    <Default>Bankovním převodem</Default>
+    <CHOICES>
+      <CHOICE>Bankovním převodem</CHOICE>
+      <CHOICE>Hotově</CHOICE>
+    </CHOICES>
+  </Field>
+
+  <Field
+           ID="{c204c3c7-11d0-4a0d-addb-c4cd2c6cc16f}"
+           Name="DPDBTBillAccount"
+           DisplayName="Bankovní účet"
+           Type="Text"
+           MaxLength="34"
+           Required="FALSE"
+           Group="DPD BusinessTrips">
+  </Field>
+  <Field
+         ID="{9446839d-8aac-409e-9516-33f2c6d2ac32}"
+         Name="DPDBTBillApproveAccountUse"
+         DisplayName="Souhlas s poskytnutím BÚ"
+         Type="Boolean"
+         Required="FALSE"
+         Group="DPD BusinessTrips">
+    <Default>0</Default>
+  </Field> 
+  <Field
+         ID="{e8932d8d-ab46-4ee2-a019-b2be7f34e020}"
+         Name="DPDBTBillApprove"
+         DisplayName="Vyhlášení o správnosti"
+         Type="Boolean"
+         Required="FALSE"
+         Group="DPD BusinessTrips">
+    <Default>0</Default>
+  </Field>
+
+  <Field
+      ID="{1d11f58c-5540-454a-8edd-712391b1e823}"
+      Name="DPDBTBillSheet"
+      DisplayName="Vyúčtování pracovní cesty"
+      Type="AttachmentField"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>DeleteAttachmentWithoutWarn</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+  
+  <Field
+       ID="{774032bc-e370-4659-8407-6c8b4274d9e7}"
+       Name="DPDBTBillDocuments"
+       DisplayName="Doklady z pracovní cesty"
+       Type="AttachmentField"
+       Required="FALSE"
+       Group="DPD BusinessTrips">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>DeleteAttachmentWithoutWarn</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+
+  <Field
+        ID="{49e8d88d-0077-4d49-aa7a-b8a499e12654}"
+        Name="DPDBTBillAmount"
+        DisplayName="Částka"
+        Type="Number"
+        Min="0"
+        Required="FALSE"
+        ShowInEditForm="TRUE"
+        ShowInNewForm="FALSE"
+        Group="DPD BusinessTrips">
+  </Field>
+
+  <Field
+       ID="{a7d9ed0a-a43d-415f-8964-60d5fa478d8c}"
+       Name="DPDBTBillCurrency"
+       DisplayName="Měna pro vyúčtování"
+       Type="Choice"
+       ShowInEditForm="TRUE"
+       ShowInNewForm="FALSE"
+       Group="DPD BusinessTrips">
+    <Default>CZK</Default>
+    <CHOICES>
+      <CHOICE>CZK</CHOICE>
+      <CHOICE>EUR</CHOICE>
+    </CHOICES>
+  </Field>
+
+  <Field
+ID="{12b1517a-28da-4b53-8a80-b0de5a66602d}"
+Name="DPDBTBillDepositSent"
+DisplayName="Vyplacená záloha"
+Type="Number"
+Min="0"
+Required="FALSE"
+ShowInEditForm="TRUE"
+ShowInNewForm="FALSE"
+Group="DPD BusinessTrips">
+  </Field>
+  <Field
+       ID="{f14222d3-021c-4b6f-8651-a350363a86d9}"
+       Name="DPDBTBillDepositCurrency"
+       DisplayName="Měna vyplacené zálohy"
+       Type="Choice"
+       ShowInEditForm="TRUE"
+       ShowInNewForm="FALSE"
+       Group="DPD BusinessTrips">
+    <Default>CZK</Default>
+    <CHOICES>
+      <CHOICE>CZK</CHOICE>
+      <CHOICE>EUR</CHOICE>
+    </CHOICES>
+  </Field>
+
+  <Field
+    ID="{1a6954e6-94ff-4015-ba73-8e1089cb80b9}"
+    Name="DPDBTBillRemainderAmount"
+    DisplayName="Doplatek"
+    Type="Number"
+    Min="0"
+    Required="FALSE"
+    ShowInEditForm="TRUE"
+    ShowInNewForm="FALSE"
+    Group="DPD BusinessTrips">
+  </Field>
+  <Field
+       ID="{1a445dbc-267c-454b-a2b2-c47abbb228c4}"
+       Name="DPDBTBillRemainderCurrency"
+       DisplayName="Měna doplatku"
+       Type="Choice"
+       ShowInEditForm="TRUE"
+       ShowInNewForm="FALSE"
+       Group="DPD BusinessTrips">
+    <Default>CZK</Default>
+    <CHOICES>
+      <CHOICE>CZK</CHOICE>
+      <CHOICE>EUR</CHOICE>
+    </CHOICES>
+  </Field>
+
+  <Field
+    ID="{656bd96d-5497-480c-ba95-d538f4538f85}"
+    Name="DPDBTBillExcessAmount"
+    DisplayName="Přeplatek"
+    Type="Number"
+    Min="0"
+    Required="FALSE"
+    ShowInEditForm="TRUE"
+    ShowInNewForm="FALSE"
+    Group="DPD BusinessTrips">
+  </Field>
+  <Field
+       ID="{bb72169a-8036-4d13-824a-e7206a463c21}"
+       Name="DPDBTBillExcessCurrency"
+       DisplayName="Měna přeplatku"
+       Type="Choice"
+       ShowInEditForm="TRUE"
+       ShowInNewForm="FALSE"
+       Group="DPD BusinessTrips">
+    <Default>CZK</Default>
+    <CHOICES>
+      <CHOICE>CZK</CHOICE>
+      <CHOICE>EUR</CHOICE>
+    </CHOICES>
+  </Field>
+  <Field
+       ID="{4db0c4b1-0213-47c8-89b8-f820200e803f}"
+       Name="DPDBTStatus"
+       DisplayName="Stav"
+       Type="Choice"
+       Required="TRUE"
+       ShowInEditForm="FALSE"
+       ShowInNewForm="FALSE"
+       Group="DPD BusinessTrips">
+    <Default>Nový</Default>
+    <CHOICES>
+          <CHOICE>Nový</CHOICE>
+          <CHOICE>Schválený nadřízeným</CHOICE>
+          <CHOICE>Revize žádosti</CHOICE>
+          <CHOICE>Revize vyúčtování</CHOICE>
+          <CHOICE>Zamítnutý</CHOICE>
+          <CHOICE>Vyučtovaný</CHOICE>
+          <CHOICE>Zrušený</CHOICE>
+        </CHOICES>
+  </Field>
+
+  <Field
+     ID="{bf751f36-70eb-4979-9e81-659cf7fe7e5b}"
+     Name="DPDBTWaitingAt"
+     DisplayName="Čeká u"
+     Type="User"
+     UserSelectionMode="PeopleOnly"
+     ShowInNewForm="FALSE"
+     ShowInEditForm="FALSE"
+     Required="FALSE"
+     Group="DPD BusinessTrips">
+  </Field>
+
+  <Field
+         ID="{f415b3c7-d3d3-43eb-a738-556a278dead1}"
+         Name="DPDBTHistory"
+         DisplayName="Historie schvalování"
+         Type="AdvancedTableField"
+         ShowInNewForm="FALSE"
+         Required="FALSE"
+         Group="DPD BusinessTrips">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>ColumnDefinition</Name>
+          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Datum|Uživatel|Role|Akce|Komentář</Value>
+        </Property>
+        <Property>
+          <Name>HideRowCmd</Name>
+          <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">true</Value>
+        </Property>
+        <Property>
+          <Name>MaxItemsOnPage</Name>
+          <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p4:type="q3:int" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">10</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+  <!-- Row 1-->
+  
+  
+  <Field
+      ID="{577f9646-a71a-423e-ba94-9b5ae7d0700f}"
+      Name="DPDBTBillDepartureTime1"
+      DisplayName="Datum a čas odjezdu 1"
+      Type="DateTime"
+      Format="TimeOnly"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+  <Field
+      ID="{4358663d-bdaa-4ff1-8f82-df0dc4e23d88}"
+      Name="DPDBTBillDepartureLocation1"
+      DisplayName="Místo odjezdu 1"
+      Type="Text"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+
+<Field
+      ID="{07d9a069-89df-428b-be67-db4ea4ccc858}"
+      Name="DPDBTBillArrivalTime1"
+      DisplayName="Datum a čas příjezdu 1"
+      Type="DateTime"
+      Format="TimeOnly"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+    
+  <Field
+     ID="{07178850-0cbf-4577-a4f0-e2ea784b1715}"
+     Name="DPDBTBillArrivalLocation1"
+     DisplayName="Místo příjezdu 1"
+     Type="Text"
+     Required="FALSE"
+     Group="DPD BusinessTrips">
+  </Field>
+
+  <Field
+       ID="{9ac9710f-543a-48d4-9c95-9fedc2c9297d}"
+       Name="DPDBTBillTransportType1"
+       DisplayName="Použitý dopravní prostředek 1"
+       Type="Choice"
+       Required="FALSE"
+       ShowInEditForm="TRUE"
+       ShowInNewForm="FALSE"
+       Group="DPD BusinessTrips">
+    <Default>Služební vozidlo</Default>
+    <CHOICES>
+      <CHOICE>Služební vozidlo</CHOICE>
+      <CHOICE>Soukromé vozidlo</CHOICE>
+      <CHOICE>Hromadný dopravní prostředek</CHOICE>
+      <CHOICE>Letadlo</CHOICE>
+    </CHOICES>
+  </Field>
+
+  <Field
+           ID="{6facfbc8-4654-4fb3-9c06-b86e9810bdb8}"
+           Name="DPDBTBillCarKmAmount1"
+           DisplayName="Ujeté km 1"
+           Type="Number"
+           Required="FALSE"
+           ShowInEditForm="TRUE"
+           ShowInNewForm="FALSE"
+           Group="DPD BusinessTrips">
+    <Default>0.00</Default>
+  </Field>
+  <Field
+           ID="{45bfe730-3d25-4b1f-855f-5f8093ce214d}"
+           Name="DPDBTBillCarKmRefund1"
+           DisplayName="Náhrada 1"
+           Type="Number"
+           Required="FALSE"
+           ShowInEditForm="TRUE"
+           ShowInNewForm="FALSE"
+           Group="DPD BusinessTrips">
+    <Default>0.00</Default>
+  </Field>
+  <Field
+           ID="{64318c1a-56b9-4c0f-8b15-3140d8266213}"
+           Name="DPDBTBillCarKmFuelVolume1"
+           DisplayName="PHM 1"
+           Type="Number"
+           Required="FALSE"
+           Group="DPD BusinessTrips">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field
+           ID="{c4813af1-f71a-4810-832a-6865f83ec265}"
+           Name="DPDBTBillTransportAmount1"
+           DisplayName="Jízdné 1"
+           Type="Number"
+           Required="FALSE"
+           ShowInEditForm="TRUE"
+           ShowInNewForm="FALSE"
+           Group="DPD BusinessTrips">
+    <Default>0.00</Default>
+  </Field>
+  <Field
+         ID="{45bbc15c-fb0b-4fd0-9388-4297940e04d4}"
+         Name="DPDBTBillHotelAmount1"
+         DisplayName="Nocležné 1"
+         Type="Number"
+         Required="FALSE"
+          ShowInEditForm="TRUE"
+          ShowInNewForm="FALSE"
+         
+         Group="DPD BusinessTrips">
+    <Default>0.00</Default>
+  </Field>
+  <Field
+         ID="{30b3cd12-857d-49ca-a375-c09231e0f72f}"
+         Name="DPDBTBillFoodAmount1"
+         DisplayName="Stravné 1"
+         Type="Number"
+         Required="FALSE"
+          ShowInEditForm="TRUE"
+          ShowInNewForm="FALSE"
+         Group="DPD BusinessTrips">
+    <Default>0.00</Default>
+  </Field>
+  <Field
+        ID="{d6ef7099-1a79-466c-afdd-638306838b8b}"
+        Name="DPDBTBillOthersAmount1"
+        DisplayName="Ostatní vedlejší výdaje 1"
+        Type="Number"
+        Required="FALSE"
+        ShowInEditForm="TRUE"
+        ShowInNewForm="FALSE"
+        Group="DPD BusinessTrips">
+    <Default>0.00</Default>
+  </Field>
+  
+  
+  <!-- Row 2-->
+  <Field
+      ID="{d003969c-92b4-4cd1-b761-864357f06d30}"
+      Name="DPDBTBillDepartureTime2"
+      DisplayName="Datum a čas odjezdu 2"
+      Type="DateTime"
+      Format="TimeOnly"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+  <Field
+      ID="{fc185f78-21a9-4220-8eb5-12a7584d2629}"
+      Name="DPDBTBillDepartureLocation2"
+      DisplayName="Místo odjezdu 2"
+      Type="Text"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+
+  
+  <Field
+      ID="{d5fa32a5-365c-4866-8281-d1b71b235495}"
+      Name="DPDBTBillArrivalTime2"
+      DisplayName="Datum a čas příjezdu 2"
+      Type="DateTime"
+      Format="TimeOnly"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+  <Field
+     ID="{f979d25c-cefa-4fb1-b475-1eca60b2e6f4}"
+     Name="DPDBTBillArrivalLocation2"
+     DisplayName="Místo příjezdu 2"
+     Type="Text"
+     Required="FALSE"
+     Group="DPD BusinessTrips">
+  </Field>
+
+  <Field DisplayName="Použitý dopravní prostředek 2" Group="DPD BusinessTrips" ID="{cdddc071-1fe8-4a77-ac4d-02793210354f}" Name="DPDBTBillTransportType2" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Choice">
+    <Default>Služební vozidlo</Default>
+    <CHOICES>
+      <CHOICE>Služební vozidlo</CHOICE>
+      <CHOICE>Soukromé vozidlo</CHOICE>
+      <CHOICE>Hromadný dopravní prostředek</CHOICE>
+      <CHOICE>Letadlo</CHOICE>
+    </CHOICES>
+  </Field>
+
+  <Field DisplayName="Ujeté km 2" Group="DPD BusinessTrips" ID="{8b4a51ec-b632-406e-a7d7-7f591ce55be8}" Name="DPDBTBillCarKmAmount2" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Náhrada 2" Group="DPD BusinessTrips" ID="{0356f7db-1845-4a41-9bf1-2085f9bcc04d}" Name="DPDBTBillCarKmRefund2" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="PHM 2" Group="DPD BusinessTrips" ID="{56429a59-17de-445c-9d73-cd7b20ce3183}" Name="DPDBTBillCarKmFuelVolume2" Required="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+
+  <Field DisplayName="Jízdné 2" Group="DPD BusinessTrips" ID="{804c12a1-820a-4ee3-8f1f-dcaaf645eadc}" Name="DPDBTBillTransportAmount2" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Nocležné 2" Group="DPD BusinessTrips" ID="{8ffd5e30-1a12-486b-991f-9c408ec5ab6a}" Name="DPDBTBillHotelAmount2" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Stravné 2" Group="DPD BusinessTrips" ID="{cf9139d8-23fc-42ce-978b-c1c1af006561}" Name="DPDBTBillFoodAmount2" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Ostatní vedlejší výdaje 2" Group="DPD BusinessTrips" ID="{5de02b85-f50c-4434-80a4-fc70dcff0cd2}" Name="DPDBTBillOthersAmount2" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <!-- Row 3-->
+   <Field
+      ID="{bd0b3f70-3fa0-4ec1-8341-6e68c3638c8a}"
+      Name="DPDBTBillDepartureTime3"
+      DisplayName="Datum a čas odjezdu 3"
+      Type="DateTime"
+      Format="TimeOnly"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+  <Field
+      ID="{c133d9b1-a781-413a-aed7-9b239bab0c2c}"
+      Name="DPDBTBillinDepartureLocation3"
+      DisplayName="Místo odjezdu 3"
+      Type="Text"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+    
+  <Field
+      ID="{0f0f25ee-1e1f-4ceb-a84c-ed21d5064d19}"
+      Name="DPDBTBillArrivalTime3"
+      DisplayName="Datum a čas příjezdu 3"
+      Type="DateTime"
+      Format="TimeOnly"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+  <Field
+     ID="{fc284b41-6de5-4cef-9b6a-719f5efc35fd}"
+     Name="DPDBTBillArrivalLocation3"
+     DisplayName="Místo příjezdu 3"
+     Type="Text"
+     Required="FALSE"
+     Group="DPD BusinessTrips">
+  </Field>
+
+  <Field DisplayName="Použitý dopravní prostředek 3" Group="DPD BusinessTrips" ID="{389de871-6805-4c36-ad47-f6110a15df7d}" Name="DPDBTBillTransportType3" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Choice">
+    <Default>Služební vozidlo</Default>
+    <CHOICES>
+      <CHOICE>Služební vozidlo</CHOICE>
+      <CHOICE>Soukromé vozidlo</CHOICE>
+      <CHOICE>Hromadný dopravní prostředek</CHOICE>
+      <CHOICE>Letadlo</CHOICE>
+    </CHOICES>
+  </Field>
+
+  <Field DisplayName="Ujeté km 3" Group="DPD BusinessTrips" ID="{e6aad96f-289a-42e0-a466-e4296bb37f76}" Name="DPDBTBillCarKmAmount3" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Náhrada 3" Group="DPD BusinessTrips" ID="{f20a39fc-2c25-4e26-8d57-20c8cdb7f68f}" Name="DPDBTBillCarKmRefund3" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="PHM 3" Group="DPD BusinessTrips" ID="{6cf057a6-1338-4663-a100-548ab74e837c}" Name="DPDBTBillCarKmFuelVolume3" Required="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+
+  <Field DisplayName="Jízdné 3" Group="DPD BusinessTrips" ID="{be00b536-5d28-4d8b-a4ab-9950178e7208}" Name="DPDBTBillTransportAmount3" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Nocležné 3" Group="DPD BusinessTrips" ID="{eef1b0c8-f976-4192-84e3-5960d55ea4b9}" Name="DPDBTBillHotelAmount3" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Stravné 3" Group="DPD BusinessTrips" ID="{78a49306-d667-4d5c-a9ec-f61072279940}" Name="DPDBTBillFoodAmount3" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Ostatní vedlejší výdaje 3" Group="DPD BusinessTrips" ID="{251d48c5-ce1a-433d-b34a-d5a3200c4d5f}" Name="DPDBTBillOthersAmount3" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <!-- Row 4-->
+   <Field
+      ID="{1c5f19ea-1a87-4c92-81ef-daffb71b9f5c}"
+      Name="DPDBTBillDepartureTime4"
+      DisplayName="Datum a čas odjezdu 4"
+      Type="DateTime"
+      Format="TimeOnly"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+  <Field
+      ID="{067c9013-c1d8-45e1-b59b-518ac3adc8f6}"
+      Name="DPDBTBillinDepartureLocation4"
+      DisplayName="Místo odjezdu 4"
+      Type="Text"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+
+ <Field
+      ID="{01f98e3a-13e1-426e-90ca-dc693a3e552e}"
+      Name="DPDBTBillArrivalTime4"
+      DisplayName="Datum a čas příjezdu 4"
+      Type="DateTime"
+      Format="TimeOnly"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+  <Field
+     ID="{3e6fbde0-0953-43b2-86b2-69ab9efa2463}"
+     Name="DPDBTBillArrivalLocation4"
+     DisplayName="Místo příjezdu 4"
+     Type="Text"
+     Required="FALSE"
+     Group="DPD BusinessTrips">
+  </Field>
+
+  <Field DisplayName="Použitý dopravní prostředek 4" Group="DPD BusinessTrips" ID="{4e50a8d8-70d7-4b3a-aa7b-0d521d07699a}" Name="DPDBTBillTransportType4" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Choice">
+    <Default>Služební vozidlo</Default>
+    <CHOICES>
+      <CHOICE>Služební vozidlo</CHOICE>
+      <CHOICE>Soukromé vozidlo</CHOICE>
+      <CHOICE>Hromadný dopravní prostředek</CHOICE>
+      <CHOICE>Letadlo</CHOICE>
+    </CHOICES>
+  </Field>
+
+  <Field DisplayName="Ujeté km 4" Group="DPD BusinessTrips" ID="{47f3e52b-56de-4665-937b-912b2801b294}" Name="DPDBTBillCarKmAmount4" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Náhrada 4" Group="DPD BusinessTrips" ID="{2ac341a6-f884-470c-a481-9d85b2c58b38}" Name="DPDBTBillCarKmRefund4" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="PHM 4" Group="DPD BusinessTrips" ID="{9f6a6798-13c8-43d9-98d5-14607baf7ad8}" Name="DPDBTBillCarKmFuelVolume4" Required="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+
+  <Field DisplayName="Jízdné 4" Group="DPD BusinessTrips" ID="{58fc6e90-3d93-4ea6-a7bd-5a5d1d35e430}" Name="DPDBTBillTransportAmount4" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Nocležné 4" Group="DPD BusinessTrips" ID="{29b56831-647d-47ae-a444-51b954a56c5d}" Name="DPDBTBillHotelAmount4" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Stravné 4" Group="DPD BusinessTrips" ID="{293019da-a25c-408a-8c1d-2346f5b4247b}" Name="DPDBTBillFoodAmount4" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Ostatní vedlejší výdaje 4" Group="DPD BusinessTrips" ID="{d5b7d704-81b3-439a-94fd-39425714e736}" Name="DPDBTBillOthersAmount4" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+
+  <!-- Row 5-->
+   <Field
+      ID="{f13614d7-a85d-458a-aaea-9334c5e2f5e9}"
+      Name="DPDBTBillDepartureTime5"
+      DisplayName="Datum a čas odjezdu 5"
+      Type="DateTime"
+      Format="TimeOnly"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+  <Field
+      ID="{82c51bf2-f88c-4437-bcbe-ab51ab199814}"
+      Name="DPDBTBillinDepartureLocation5"
+      DisplayName="Místo odjezdu 5"
+      Type="Text"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+
+  <Field
+      ID="{cf3b0dd9-12b5-42b9-8d87-f274f0ec6e39}"
+      Name="DPDBTBillArrivalTime5"
+      DisplayName="Datum a čas příjezdu 5"
+      Type="DateTime"
+      Format="TimeOnly"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+  <Field
+     ID="{24d06d41-7169-4f32-80a9-5dff67443747}"
+     Name="DPDBTBillArrivalLocation5"
+     DisplayName="Místo příjezdu 5"
+     Type="Text"
+     Required="FALSE"
+     Group="DPD BusinessTrips">
+  </Field>
+
+  <Field DisplayName="Použitý dopravní prostředek 5" Group="DPD BusinessTrips" ID="{b4289998-95a2-4ec8-aa10-06481589a447}" Name="DPDBTBillTransportType5" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Choice">
+    <Default>Služební vozidlo</Default>
+    <CHOICES>
+      <CHOICE>Služební vozidlo</CHOICE>
+      <CHOICE>Soukromé vozidlo</CHOICE>
+      <CHOICE>Hromadný dopravní prostředek</CHOICE>
+      <CHOICE>Letadlo</CHOICE>
+    </CHOICES>
+  </Field>
+
+  <Field DisplayName="Ujeté km 5" Group="DPD BusinessTrips" ID="{4d494cd6-d44b-4f8f-82d0-99cd9ad47741}" Name="DPDBTBillCarKmAmount5" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Náhrada 5" Group="DPD BusinessTrips" ID="{772020c3-957c-47eb-b4a6-027bcd4e10e8}" Name="DPDBTBillCarKmRefund5" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="PHM 5" Group="DPD BusinessTrips" ID="{fbf22d70-9144-4419-9d55-262eb6ae7752}" Name="DPDBTBillCarKmFuelVolume5" Required="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+
+  <Field DisplayName="Jízdné 5" Group="DPD BusinessTrips" ID="{ba0c6af4-5196-4170-be6a-005dc73a3dbe}" Name="DPDBTBillTransportAmount5" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Nocležné 5" Group="DPD BusinessTrips" ID="{a41e35cf-9193-47ac-b8e9-8703f6980e31}" Name="DPDBTBillHotelAmount5" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Stravné 5" Group="DPD BusinessTrips" ID="{f58a1e28-578c-42af-a3d5-bb239000e63a}" Name="DPDBTBillFoodAmount5" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Ostatní vedlejší výdaje 5" Group="DPD BusinessTrips" ID="{ab8fe2ab-8931-4439-b02d-b921597872f2}" Name="DPDBTBillOthersAmount5" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+
+  <!-- Row 6-->
+   <Field
+      ID="{a394ad2d-faee-47ee-8713-e11774254e9b}"
+      Name="DPDBTBillDepartureTime6"
+      DisplayName="Datum a čas odjezdu 6"
+      Type="DateTime"
+      Format="TimeOnly"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+  <Field
+      ID="{a5f17b4e-ce18-4b0d-aa65-4e550ededc53}"
+      Name="DPDBTBillinDepartureLocation6"
+      DisplayName="Místo odjezdu 6"
+      Type="Text"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+    
+  <Field
+      ID="{823932b9-2b78-456c-96db-ada24af306ef}"
+      Name="DPDBTBillArrivalTime6"
+      DisplayName="Datum a čas příjezdu 6"
+      Type="DateTime"
+      Format="TimeOnly"
+      Required="FALSE"
+      Group="DPD BusinessTrips">
+  </Field>
+  <Field
+     ID="{e565ffc5-f1e1-491c-914d-2ea11882bee4}"
+     Name="DPDBTBillArrivalLocation6"
+     DisplayName="Místo příjezdu 6"
+     Type="Text"
+     Required="FALSE"
+     Group="DPD BusinessTrips">
+  </Field>
+
+  <Field DisplayName="Použitý dopravní prostředek 6" Group="DPD BusinessTrips" ID="{f64dd15e-62a8-45c2-83fc-88b0ffdb5781}" Name="DPDBTBillTransportType6" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Choice">
+    <Default>Služební vozidlo</Default>
+    <CHOICES>
+      <CHOICE>Služební vozidlo</CHOICE>
+      <CHOICE>Soukromé vozidlo</CHOICE>
+      <CHOICE>Hromadný dopravní prostředek</CHOICE>
+      <CHOICE>Letadlo</CHOICE>
+    </CHOICES>
+  </Field>
+
+  <Field DisplayName="Ujeté km 6" Group="DPD BusinessTrips" ID="{2ff2ad52-067f-4731-9070-b4475aa540e0}" Name="DPDBTBillCarKmAmount6" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Náhrada 6" Group="DPD BusinessTrips" ID="{3413d6a6-7298-4cc1-8e8d-2f3151c4ef24}" Name="DPDBTBillCarKmRefund6" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="PHM 6" Group="DPD BusinessTrips" ID="{bc1738a5-e596-46e6-a495-65a5c0f63652}" Name="DPDBTBillCarKmFuelVolume6" Required="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+
+  <Field DisplayName="Jízdné 6" Group="DPD BusinessTrips" ID="{866261d2-3797-429c-b25b-4ebe4fcc2e99}" Name="DPDBTBillTransportAmount6" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Nocležné 6" Group="DPD BusinessTrips" ID="{2dcbdea5-725a-46b1-8e76-875e03a455d5}" Name="DPDBTBillHotelAmount6" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Stravné 6" Group="DPD BusinessTrips" ID="{1c8e29b1-28af-429c-b7ef-ebd9fe6f215f}" Name="DPDBTBillFoodAmount6" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+  <Field DisplayName="Ostatní vedlejší výdaje 6" Group="DPD BusinessTrips" ID="{c8f6678a-2e37-47a2-875e-410ca7acb8d4}" Name="DPDBTBillOthersAmount6" Required="FALSE" ShowInEditForm="TRUE" ShowInNewForm="FALSE" Type="Number">
+    <Default>0.00</Default>
+  </Field>
+
+
+
+</Elements>
